@@ -19,7 +19,8 @@ data/sed-smoke/
 data/desed-real-strong/
 data/desed-real-strong-only/
 data/external-desed-public/
-data/external-real-pilot-v1/
+data/external-real-pilot-v1/*
+!data/external-real-pilot-v1/selection.json
 data/external-strong-source-audit/
 data/l4-engineering/
 data/l4-field-kit/
