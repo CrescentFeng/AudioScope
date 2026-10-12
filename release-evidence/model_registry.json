@@ -1,0 +1,22 @@
+{
+  "default": "v1_refined",
+  "models": {
+    "v1_baseline": {
+      "label": "v1.0 基线",
+      "checkpoint": "artifacts/l4-engineering/crnn_short_event_calibrated.pt",
+      "onnx": "artifacts/l4-engineering/crnn_short_event_fp32.onnx",
+      "checkpoint_sha256": "297c5ed4a6db7e0944117a9ffa5e986fac3f503095baffa834e7a997ee19aff0",
+      "onnx_sha256": "e557366dbf893a6c2bd09ec7d155bf53a6f5dd69c171fafbe85b05f4ab5c53b3"
+    },
+    "v1_refined": {
+      "label": "事件边界优化版（默认）",
+      "checkpoint": "artifacts/model-improvement/crnn_postprocess_candidate.pt",
+      "onnx": "artifacts/l4-engineering/crnn_short_event_fp32.onnx",
+      "checkpoint_sha256": "b2c0219cb514f863557b16022617270df02dbdfaa0e6080d97041eb45559267f",
+      "onnx_sha256": "e557366dbf893a6c2bd09ec7d155bf53a6f5dd69c171fafbe85b05f4ab5c53b3"
+    }
+  },
+  "quality_report_sha256": "e4795ca84636520947b753bd61956e54835541de30479d702ace31f22c724407",
+  "stream_report_sha256": "9a35d30b595f9f25cdd49f2e58ae493d05349ca45ee01019c8ed09f2c614d642",
+  "v1_archive_modified": false
+}

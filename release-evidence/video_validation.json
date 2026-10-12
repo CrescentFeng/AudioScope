@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "smoke": false,
+  "physical_validation_performed": false,
+  "voice": "Tingting",
+  "duration_s": 144.04644,
+  "checks": {
+    "resolution": true,
+    "video_codec": true,
+    "pixel_format": true,
+    "audio_codec": true,
+    "duration": true,
+    "full_decode": true,
+    "audible_audio": true,
+    "subtitle_files": true
+  },
+  "video_uri": "release/video/AudioScope_v1.0_zh-CN.mp4",
+  "video_sha256": "73e10f30b8d30db7bae36f411ebc894698e65999c0bd2761931bc7409c72e8d7",
+  "disclaimer": "软件验证完成；未进行自有物理设备/房间认证。",
+  "source_sha256": {
+    "reports/generated/software-release/robustness.json": "47366d9d1371c7db68b952936afdbcba51ae3d48ffc73e66eae0a94d3a19b374",
+    "reports/generated/software-release/stream_soak.json": "2a3b8013dd410b9de928a9c1e2869ff1042e843f96ced360bb0e22b8d90a62c6",
+    "reports/generated/software-release/catalog_snapshot.json": "894f63bc4462855a9ae6a5294a34332baa66997b02df73d1d42b4c83c169a349",
+    "reports/generated/l4-engineering/long_audio_prediction.json": "cc2d135975e56f5255de9cb953ec9d0931e706d591c7641ad2baa908389b554a"
+  },
+  "asset_sha256": {
+    "release/video/zh-CN.srt": "4b956d545b8c025fdf9ac87a93293e4b76b419dc04b36cba0ba0e77130cff721",
+    "release/video/en.srt": "0e3a4a8f97dc7dde42906d348e40f7252ef96ce138db8bf970b5b902fb9c9e6e"
+  }
+}

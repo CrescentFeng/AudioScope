@@ -1,0 +1,7 @@
+# UI-only update on an existing AudioScope runtime; no dependency/model upgrades.
+# docker build -f Dockerfile.ui --build-arg BASE_IMAGE=<existing-image-id> -t audioscope-python:local .
+ARG BASE_IMAGE=audioscope-python:local
+FROM ${BASE_IMAGE}
+WORKDIR /app
+COPY src/audioscope/workbench_ui.py src/audioscope/timeline.py ./src/audioscope/
+RUN python -m pip install --no-index --no-deps --no-build-isolation .

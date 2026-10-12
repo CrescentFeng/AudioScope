@@ -1,0 +1,28 @@
+project:
+  seed: 2027
+data:
+  root: data/raw/ESC-50-master
+  manifest: data/manifests/esc50.jsonl
+  folds: [1, 2, 3, 4, 5]
+  allow_source_fold_overlap: true
+transfer:
+  family: clap
+  model_id: laion/clap-htsat-unfused
+  model_path: data/pretrained/clap-htsat-unfused-8fa0f1c
+  pinned_revision: 8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a
+  batch_size: 4
+  device: auto
+  torch_threads: 8
+  local_files_only: true
+probe:
+  c: 1.0
+  max_iter: 2000
+zero_shot:
+  prompt_templates:
+    - "a sound of {label}"
+    - "an audio recording of {label}"
+    - "the environmental sound {label}"
+outputs:
+  embedding_cache: data/processed/esc50-clap-embeddings
+  artifact_dir: artifacts/esc50-clap
+  report_dir: reports/generated/esc50-clap

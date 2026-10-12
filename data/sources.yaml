@@ -1,0 +1,53 @@
+sources:
+  - dataset_id: esc50
+    name: ESC-50
+    homepage: https://github.com/karolpiczak/ESC-50
+    license: CC-BY-NC-3.0
+    pinned_revision: 33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6
+    commercial_use: false
+    redistribution: attribution_required
+    intended_use: research-and-portfolio-evaluation
+    status: prepared-locally
+    notes: Use the official five folds. Keep the original filename and source recording ID.
+  - dataset_id: audioscope-smoke-v1
+    name: AudioScope deterministic synthetic smoke set
+    homepage: null
+    license: CC0-1.0
+    commercial_use: true
+    redistribution: allowed
+    intended_use: pipeline-tests-only
+    status: generated-locally
+    notes: Not valid evidence of real-world model quality.
+  - dataset_id: audioscope-polyphonic-esc10-v1
+    name: AudioScope Polyphonic ESC-10 v1
+    homepage: null
+    license: CC-BY-NC-3.0
+    commercial_use: false
+    redistribution: attribution_required
+    intended_use: controlled-strong-label-sed-baseline
+    status: generated-locally
+    notes: Synthetic 10-second mixtures inherit ESC-50 licensing and use source-disjoint splits.
+  - dataset_id: desed-webdataset-v2
+    name: DESED in WebDataset Format v2
+    homepage: https://doi.org/10.5281/zenodo.14808180
+    license: CC-BY-4.0-as-declared-by-repack-record
+    commercial_use: verify-underlying-audioset-and-youtube-terms
+    redistribution: verify-underlying-content-terms
+    intended_use: real-strong-label-sed-research-evaluation
+    status: prepared-locally-md5-verified
+    notes: Only the 1153-clip strongly annotated eval pool is used; the weak train pool is excluded.
+models:
+  - model_id: MIT/ast-finetuned-audioset-10-10-0.4593
+    family: Audio Spectrogram Transformer
+    homepage: https://huggingface.co/MIT/ast-finetuned-audioset-10-10-0.4593
+    license: BSD-3-Clause
+    pinned_revision: f826b80d28226b62986cc218e5cec390b1096902
+    weights_sha256: ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d
+    use: frozen-encoder-linear-probe
+  - model_id: laion/clap-htsat-unfused
+    family: CLAP
+    homepage: https://huggingface.co/laion/clap-htsat-unfused
+    license: Apache-2.0
+    pinned_revision: 8fa0f1c6d0433df6e97c127f64b2a1d6c0dcda8a
+    weights_sha256: 1cd3c601bc4afe0fa87be3de4c13dd2cfadd249fac1e29acf74a9b296c3219bb
+    use: zero-shot-and-frozen-encoder-linear-probe

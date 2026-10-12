@@ -1,0 +1,44 @@
+project:
+  seed: 2027
+paths:
+  source_artifact: artifacts/desed-real-enhanced/crnn_short_event.pt
+  validation_cache: data/processed/desed-real-strong-only-sed/validation.npz
+  manifest: data/desed-real-strong-only/manifest.jsonl
+  dataset_root: data/desed-real-strong-only
+  esc_manifest: data/manifests/esc50.jsonl
+  esc_root: data/raw/ESC-50-master
+  artifact_dir: artifacts/l4-engineering
+  report_dir: reports/generated/l4-engineering
+  demo_dir: data/l4-engineering
+deployment:
+  threshold_profile: overall
+calibration:
+  method: scalar_temperature
+  threshold_grid: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.925, 0.95, 0.975]
+open_set:
+  method: maximum_known_probability
+  maximum_unknown_clips: 200
+  activity_dbfs: -50.0
+long_audio:
+  clips: 12
+  window_seconds: 10.0
+  hop_seconds: 5.0
+streaming:
+  chunk_seconds: 1.0
+  finalize_delay_seconds: 0.4
+export:
+  opset: 17
+  dynamic_batch: true
+quantization:
+  method: onnxruntime_dynamic_int8
+benchmark:
+  repeats: 20
+robustness:
+  snr_db: [clean, 20, 10, 0, -5]
+metrics:
+  event:
+    onset_collar_s: 0.2
+    offset_collar_s: 0.2
+    offset_ratio: 0.2
+  segment_resolution_s: 1.0
+  short_event_max_s: 1.0

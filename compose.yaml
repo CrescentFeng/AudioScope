@@ -1,0 +1,112 @@
+name: audioscope
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: audioscope
+      POSTGRES_USER: audioscope
+      POSTGRES_PASSWORD: ${AUDIOSCOPE_DB_PASSWORD:?set AUDIOSCOPE_DB_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${AUDIOSCOPE_DB_PORT:-55432}:5432"
+    volumes:
+      - audioscope_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U audioscope -d audioscope"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  migrate:
+    image: audioscope-python:local
+    build: .
+    environment:
+      AUDIOSCOPE_DATABASE_URL: postgresql+psycopg://audioscope:${AUDIOSCOPE_DB_PASSWORD}@db:5432/audioscope
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["alembic", "upgrade", "head"]
+    restart: "no"
+
+  api:
+    image: audioscope-python:local
+    build: .
+    environment:
+      AUDIOSCOPE_DATABASE_URL: postgresql+psycopg://audioscope:${AUDIOSCOPE_DB_PASSWORD}@db:5432/audioscope
+    ports:
+      - "127.0.0.1:${AUDIOSCOPE_API_PORT:-8000}:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    volumes:
+      - ./data:/app/data:ro
+      - ./artifacts:/app/artifacts:ro
+      - ./reports:/app/reports:ro
+      - ./runtime:/app/runtime
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  api-offline:
+    image: audioscope-offline-api:local
+    build:
+      context: .
+      dockerfile: Dockerfile.offline-api
+    profiles: ["offline"]
+    environment:
+      AUDIOSCOPE_DB_HOST: db
+      AUDIOSCOPE_DB_PORT: 5432
+      AUDIOSCOPE_DB_NAME: audioscope
+      AUDIOSCOPE_DB_USER: audioscope
+      AUDIOSCOPE_DB_PASSWORD: ${AUDIOSCOPE_DB_PASSWORD}
+    ports:
+      - "127.0.0.1:${AUDIOSCOPE_OFFLINE_API_PORT:-8001}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "php", "-r", "exit(@file_get_contents('http://127.0.0.1:8000/health') === false ? 1 : 0);"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  demo:
+    image: audioscope-python:local
+    build: .
+    profiles: ["demo"]
+    ports:
+      - "127.0.0.1:${AUDIOSCOPE_DEMO_PORT:-7862}:7860"
+    environment:
+      AUDIOSCOPE_DATABASE_URL: postgresql+psycopg://audioscope:${AUDIOSCOPE_DB_PASSWORD}@db:5432/audioscope
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    volumes:
+      - ./data:/app/data:ro
+      - ./artifacts:/app/artifacts:ro
+      - ./runtime:/app/runtime
+    command:
+      - python
+      - -m
+      - audioscope.launch
+      - --root
+      - /app
+      - --port
+      - "7860"
+      - --server-name
+      - 0.0.0.0
+    healthcheck:
+      test: ["CMD", "python", "-m", "audioscope.workbench_health"]
+      interval: 30s
+      timeout: 15s
+      start_period: 60s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  audioscope_postgres_data:

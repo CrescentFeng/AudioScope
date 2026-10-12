@@ -1,0 +1,24 @@
+project:
+  seed: 2027
+data:
+  generated: true
+  root: data/smoke
+  manifest: data/smoke/manifest.jsonl
+  sample_rate: 16000
+  duration_s: 1.0
+  test_fold: 5
+  feature_cache: data/processed/smoke-mfcc-cache
+features:
+  n_mfcc: 20
+  n_mels: 40
+  n_fft: 512
+  frame_ms: 25
+  hop_ms: 10
+model:
+  c: 10.0
+  kernel: rbf
+outputs:
+  artifact_dir: artifacts/smoke
+  report_dir: reports/generated/smoke
+robustness:
+  snr_db: [20, 10, 0]

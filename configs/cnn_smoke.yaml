@@ -1,0 +1,34 @@
+project:
+  seed: 2027
+data:
+  generated: true
+  root: data/cnn-smoke
+  manifest: data/cnn-smoke/manifest.jsonl
+  sample_rate: 8000
+  duration_s: 0.25
+  folds: [1, 2]
+  feature_cache: data/processed/cnn-smoke-logmel-cache
+features:
+  n_mels: 24
+  n_fft: 256
+  frame_ms: 25
+  hop_ms: 10
+  target_frames: 24
+model:
+  device: cpu
+  channels: [4, 8]
+  dropout: 0.1
+  batch_size: 8
+  epochs: 12
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  label_smoothing: 0.0
+  augmentation:
+    max_time_shift_frames: 2
+    frequency_mask: 2
+    time_mask: 2
+outputs:
+  artifact_dir: artifacts/cnn-smoke
+  report_dir: reports/generated/cnn-smoke
+robustness:
+  snr_db: [10]

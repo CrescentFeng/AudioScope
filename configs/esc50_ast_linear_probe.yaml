@@ -1,0 +1,23 @@
+project:
+  seed: 2027
+data:
+  root: data/raw/ESC-50-master
+  manifest: data/manifests/esc50.jsonl
+  folds: [1, 2, 3, 4, 5]
+  allow_source_fold_overlap: true
+transfer:
+  family: ast
+  model_id: MIT/ast-finetuned-audioset-10-10-0.4593
+  batch_size: 4
+  device: auto
+  torch_threads: 8
+  local_files_only: false
+probe:
+  c: 1.0
+  max_iter: 2000
+  sample_counts_per_class: [1, 2, 4, 8, 16, 32]
+outputs:
+  embedding_cache: data/processed/esc50-ast-embeddings
+  artifact_dir: artifacts/esc50-ast-linear-probe
+  report_dir: reports/generated/esc50-ast-linear-probe
+

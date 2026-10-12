@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use AudioScope, please cite this software repository."
+title: "AudioScope: Reproducible Environmental Sound Understanding"
+type: software
+version: 1.0.0
+date-released: 2026-10-12
+license: MIT
+authors:
+  - name: "CrescentFeng"
+repository-code: "https://github.com/CrescentFeng/AudioScope"
+abstract: >-
+  A reproducible environmental-sound classification and sound-event-detection
+  project spanning classical baselines, transfer learning, streaming inference,
+  controlled software domain-shift evaluation, and a local review workbench.

@@ -1,0 +1,11 @@
+project:
+  seed: 2027
+data:
+  root: data/smoke
+  manifest: data/smoke/manifest.jsonl
+  folds: [1, 2]
+  allow_source_fold_overlap: false
+probe:
+  c: 1.0
+  max_iter: 500
+  sample_counts_per_class: [1, 2]

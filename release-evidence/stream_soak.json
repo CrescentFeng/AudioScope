@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "mode": "accelerated_file_stream",
+  "physical_validation_performed": false,
+  "processed_seconds": 1800.0,
+  "wall_seconds": 10.855690500000492,
+  "rtf": 0.00603093916666694,
+  "compute_p95_ms": 9.620647950214334,
+  "rss_growth_bytes_after_warmup": 40927232,
+  "state_maxima": {
+    "audio_samples": 160000,
+    "pending_samples": 0,
+    "median_frames": 3,
+    "class_states": 10,
+    "latency_entries": 1800
+  },
+  "state_limits": {
+    "audio_samples": 160000,
+    "pending_samples": 16000,
+    "median_frames": 3,
+    "class_states": 10,
+    "latency_entries": 2048
+  },
+  "checks": {
+    "full_duration": true,
+    "compute_p95_below_chunk": true,
+    "rtf_below_01": true,
+    "rss_growth_below_64mib": true,
+    "bounded_state": true,
+    "no_duplicate_events": true,
+    "per_class_chronological": true,
+    "repeat_event_hash_match": true
+  },
+  "repeat_event_hashes": [
+    "5e3e659328eafbaba3d2dc2bc91a5b45e11595253f09ec0d93b22c1ce2290bd7",
+    "5e3e659328eafbaba3d2dc2bc91a5b45e11595253f09ec0d93b22c1ce2290bd7"
+  ],
+  "event_count": 1198,
+  "model_sha256": "297c5ed4a6db7e0944117a9ffa5e986fac3f503095baffa834e7a997ee19aff0",
+  "onnx_sha256": "e557366dbf893a6c2bd09ec7d155bf53a6f5dd69c171fafbe85b05f4ab5c53b3",
+  "note": "1,800 seconds of audio processed without clock pacing; not a 30-minute wall-clock microphone run. Events are finalized in availability order; time ordering is enforced per class."
+}

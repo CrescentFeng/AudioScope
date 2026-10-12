@@ -1,0 +1,700 @@
+{
+  "status": "passed",
+  "protocol": "controlled-software-domain-shift-v1",
+  "seed": 2027,
+  "physical_validation_performed": false,
+  "test_clips": 221,
+  "model_sha256": "297c5ed4a6db7e0944117a9ffa5e986fac3f503095baffa834e7a997ee19aff0",
+  "onnx_sha256": "e557366dbf893a6c2bd09ec7d155bf53a6f5dd69c171fafbe85b05f4ab5c53b3",
+  "manifest_sha256": "8470e61574bb24534d811a5d6f0a330800270dba649bf0fc81cc960214bebb5f",
+  "threshold_profile": "overall",
+  "notes": "Simulated impulse responses, bandwidth and noise; no physical devices. Causal transforms keep source annotation times and crop reverb tails. Peak normalization only when exceeding 0.98; no test-set tuning.",
+  "conditions": [
+    {
+      "condition": "clean",
+      "clips": 221,
+      "event_f1": 0.25825571549534293,
+      "macro_event_f1": 0.18648785521201222,
+      "segment_f1": 0.5849724626278522,
+      "inference_seconds": 1.1281710045295767,
+      "model_rtf": 0.0005166860777893478,
+      "evaluation_seconds_including_repeat": 4.802340166002978,
+      "evaluation_rtf_including_repeat": 0.0010997013283535744,
+      "prediction_sha256": "59ee738b1d249161820e239a7132f022fe9db0ab31a203df1b54b505b9909554",
+      "repeat_prediction_sha256": "59ee738b1d249161820e239a7132f022fe9db0ab31a203df1b54b505b9909554",
+      "reproducible": true,
+      "per_class": {
+        "alarm_bell_ringing": {
+          "precision": 0.31932773109243695,
+          "recall": 0.5428571428571428,
+          "f1": 0.4021164021164021,
+          "tp": 38,
+          "fp": 81,
+          "fn": 32
+        },
+        "blender": {
+          "precision": 0.07766990291262135,
+          "recall": 0.47058823529411764,
+          "f1": 0.13333333333333333,
+          "tp": 8,
+          "fp": 95,
+          "fn": 9
+        },
+        "cat": {
+          "precision": 0.17525773195876287,
+          "recall": 0.25757575757575757,
+          "f1": 0.2085889570552147,
+          "tp": 17,
+          "fp": 80,
+          "fn": 49
+        },
+        "dishes": {
+          "precision": 0.13852813852813853,
+          "recall": 0.27586206896551724,
+          "f1": 0.1844380403458213,
+          "tp": 32,
+          "fp": 199,
+          "fn": 84
+        },
+        "dog": {
+          "precision": 0.09191176470588236,
+          "recall": 0.2717391304347826,
+          "f1": 0.13736263736263737,
+          "tp": 25,
+          "fp": 247,
+          "fn": 67
+        },
+        "electric_shaver_toothbrush": {
+          "precision": 0.05714285714285714,
+          "recall": 0.14285714285714285,
+          "f1": 0.08163265306122448,
+          "tp": 2,
+          "fp": 33,
+          "fn": 12
+        },
+        "frying": {
+          "precision": 0.025,
+          "recall": 0.05263157894736842,
+          "f1": 0.03389830508474576,
+          "tp": 1,
+          "fp": 39,
+          "fn": 18
+        },
+        "running_water": {
+          "precision": 0.057971014492753624,
+          "recall": 0.2,
+          "f1": 0.0898876404494382,
+          "tp": 8,
+          "fp": 130,
+          "fn": 32
+        },
+        "speech": {
+          "precision": 0.36444444444444446,
+          "recall": 0.5030674846625767,
+          "f1": 0.422680412371134,
+          "tp": 164,
+          "fp": 286,
+          "fn": 162
+        },
+        "vacuum_cleaner": {
+          "precision": 0.1,
+          "recall": 0.5882352941176471,
+          "f1": 0.17094017094017097,
+          "tp": 10,
+          "fp": 90,
+          "fn": 7
+        }
+      },
+      "event_f1_drop_absolute": 0.0,
+      "event_f1_drop_relative": 0.0
+    },
+    {
+      "condition": "reverb_025",
+      "clips": 221,
+      "event_f1": 0.2531433361274099,
+      "macro_event_f1": 0.18437046485613434,
+      "segment_f1": 0.5861323904930269,
+      "inference_seconds": 2.282570373325143,
+      "model_rtf": 0.0010453843688025901,
+      "evaluation_seconds_including_repeat": 9.052002125012223,
+      "evaluation_rtf_including_repeat": 0.002072843325761432,
+      "prediction_sha256": "cc03119da4f5ba2ea10b34d5b43ea92412dd7158e176abf90937b7e330132ab0",
+      "repeat_prediction_sha256": "cc03119da4f5ba2ea10b34d5b43ea92412dd7158e176abf90937b7e330132ab0",
+      "reproducible": true,
+      "per_class": {
+        "alarm_bell_ringing": {
+          "precision": 0.312,
+          "recall": 0.5571428571428572,
+          "f1": 0.4,
+          "tp": 39,
+          "fp": 86,
+          "fn": 31
+        },
+        "blender": {
+          "precision": 0.06722689075630252,
+          "recall": 0.47058823529411764,
+          "f1": 0.11764705882352941,
+          "tp": 8,
+          "fp": 111,
+          "fn": 9
+        },
+        "cat": {
+          "precision": 0.18947368421052632,
+          "recall": 0.2727272727272727,
+          "f1": 0.2236024844720497,
+          "tp": 18,
+          "fp": 77,
+          "fn": 48
+        },
+        "dishes": {
+          "precision": 0.1391304347826087,
+          "recall": 0.27586206896551724,
+          "f1": 0.18497109826589594,
+          "tp": 32,
+          "fp": 198,
+          "fn": 84
+        },
+        "dog": {
+          "precision": 0.09561752988047809,
+          "recall": 0.2608695652173913,
+          "f1": 0.13994169096209913,
+          "tp": 24,
+          "fp": 227,
+          "fn": 68
+        },
+        "electric_shaver_toothbrush": {
+          "precision": 0.05128205128205128,
+          "recall": 0.14285714285714285,
+          "f1": 0.07547169811320754,
+          "tp": 2,
+          "fp": 37,
+          "fn": 12
+        },
+        "frying": {
+          "precision": 0.025,
+          "recall": 0.05263157894736842,
+          "f1": 0.03389830508474576,
+          "tp": 1,
+          "fp": 39,
+          "fn": 18
+        },
+        "running_water": {
+          "precision": 0.05517241379310345,
+          "recall": 0.2,
+          "f1": 0.08648648648648649,
+          "tp": 8,
+          "fp": 137,
+          "fn": 32
+        },
+        "speech": {
+          "precision": 0.33970276008492567,
+          "recall": 0.49079754601226994,
+          "f1": 0.4015056461731493,
+          "tp": 160,
+          "fp": 311,
+          "fn": 166
+        },
+        "vacuum_cleaner": {
+          "precision": 0.10638297872340426,
+          "recall": 0.5882352941176471,
+          "f1": 0.18018018018018017,
+          "tp": 10,
+          "fp": 84,
+          "fn": 7
+        }
+      },
+      "event_f1_drop_absolute": 0.005112379367933018,
+      "event_f1_drop_relative": 0.019795803388619325
+    },
+    {
+      "condition": "reverb_080",
+      "clips": 221,
+      "event_f1": 0.2436064152579107,
+      "macro_event_f1": 0.1839161132943188,
+      "segment_f1": 0.5770750988142291,
+      "inference_seconds": 2.4100821742904373,
+      "model_rtf": 0.0011037829378564774,
+      "evaluation_seconds_including_repeat": 10.182935999997426,
+      "evaluation_rtf_including_repeat": 0.002331819042101913,
+      "prediction_sha256": "77e9f505c436a7228c6fe173f906d3e282f454a872852a553bd6ef58858326e5",
+      "repeat_prediction_sha256": "77e9f505c436a7228c6fe173f906d3e282f454a872852a553bd6ef58858326e5",
+      "reproducible": true,
+      "per_class": {
+        "alarm_bell_ringing": {
+          "precision": 0.3217391304347826,
+          "recall": 0.5285714285714286,
+          "f1": 0.39999999999999997,
+          "tp": 37,
+          "fp": 78,
+          "fn": 33
+        },
+        "blender": {
+          "precision": 0.0743801652892562,
+          "recall": 0.5294117647058824,
+          "f1": 0.13043478260869565,
+          "tp": 9,
+          "fp": 112,
+          "fn": 8
+        },
+        "cat": {
+          "precision": 0.2087912087912088,
+          "recall": 0.2878787878787879,
+          "f1": 0.24203821656050958,
+          "tp": 19,
+          "fp": 72,
+          "fn": 47
+        },
+        "dishes": {
+          "precision": 0.15675675675675677,
+          "recall": 0.25,
+          "f1": 0.19269102990033224,
+          "tp": 29,
+          "fp": 156,
+          "fn": 87
+        },
+        "dog": {
+          "precision": 0.07058823529411765,
+          "recall": 0.1956521739130435,
+          "f1": 0.10374639769452448,
+          "tp": 18,
+          "fp": 237,
+          "fn": 74
+        },
+        "electric_shaver_toothbrush": {
+          "precision": 0.05405405405405406,
+          "recall": 0.14285714285714285,
+          "f1": 0.0784313725490196,
+          "tp": 2,
+          "fp": 35,
+          "fn": 12
+        },
+        "frying": {
+          "precision": 0.029411764705882353,
+          "recall": 0.05263157894736842,
+          "f1": 0.03773584905660377,
+          "tp": 1,
+          "fp": 33,
+          "fn": 18
+        },
+        "running_water": {
+          "precision": 0.05521472392638037,
+          "recall": 0.225,
+          "f1": 0.08866995073891627,
+          "tp": 9,
+          "fp": 154,
+          "fn": 31
+        },
+        "speech": {
+          "precision": 0.3387096774193548,
+          "recall": 0.450920245398773,
+          "f1": 0.3868421052631579,
+          "tp": 147,
+          "fp": 287,
+          "fn": 179
+        },
+        "vacuum_cleaner": {
+          "precision": 0.10526315789473684,
+          "recall": 0.5882352941176471,
+          "f1": 0.17857142857142858,
+          "tp": 10,
+          "fp": 85,
+          "fn": 7
+        }
+      },
+      "event_f1_drop_absolute": 0.014649300237432217,
+      "event_f1_drop_relative": 0.05672401173904081
+    },
+    {
+      "condition": "telephone",
+      "clips": 221,
+      "event_f1": 0.19531531531531532,
+      "macro_event_f1": 0.14704761636548302,
+      "segment_f1": 0.4774691925694317,
+      "inference_seconds": 0.8114365462679416,
+      "model_rtf": 0.0003716262559335489,
+      "evaluation_seconds_including_repeat": 4.96608424995793,
+      "evaluation_rtf_including_repeat": 0.0011371975448669445,
+      "prediction_sha256": "4a901a7a1424b9aa1f67ddf9af04b47ae75d983c04e904d681e448168bb8d5e8",
+      "repeat_prediction_sha256": "4a901a7a1424b9aa1f67ddf9af04b47ae75d983c04e904d681e448168bb8d5e8",
+      "reproducible": true,
+      "per_class": {
+        "alarm_bell_ringing": {
+          "precision": 0.23958333333333334,
+          "recall": 0.32857142857142857,
+          "f1": 0.27710843373493976,
+          "tp": 23,
+          "fp": 73,
+          "fn": 47
+        },
+        "blender": {
+          "precision": 0.045,
+          "recall": 0.5294117647058824,
+          "f1": 0.08294930875576036,
+          "tp": 9,
+          "fp": 191,
+          "fn": 8
+        },
+        "cat": {
+          "precision": 0.1694915254237288,
+          "recall": 0.15151515151515152,
+          "f1": 0.16,
+          "tp": 10,
+          "fp": 49,
+          "fn": 56
+        },
+        "dishes": {
+          "precision": 0.1891891891891892,
+          "recall": 0.2413793103448276,
+          "f1": 0.21212121212121213,
+          "tp": 28,
+          "fp": 120,
+          "fn": 88
+        },
+        "dog": {
+          "precision": 0.07504363001745201,
+          "recall": 0.4673913043478261,
+          "f1": 0.1293233082706767,
+          "tp": 43,
+          "fp": 530,
+          "fn": 49
+        },
+        "electric_shaver_toothbrush": {
+          "precision": 0.07407407407407407,
+          "recall": 0.14285714285714285,
+          "f1": 0.0975609756097561,
+          "tp": 2,
+          "fp": 25,
+          "fn": 12
+        },
+        "frying": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 19
+        },
+        "running_water": {
+          "precision": 0.055762081784386616,
+          "recall": 0.375,
+          "f1": 0.09708737864077668,
+          "tp": 15,
+          "fp": 254,
+          "fn": 25
+        },
+        "speech": {
+          "precision": 0.24954128440366974,
+          "recall": 0.4171779141104294,
+          "f1": 0.31228473019517794,
+          "tp": 136,
+          "fp": 409,
+          "fn": 190
+        },
+        "vacuum_cleaner": {
+          "precision": 0.06172839506172839,
+          "recall": 0.29411764705882354,
+          "f1": 0.10204081632653061,
+          "tp": 5,
+          "fp": 76,
+          "fn": 12
+        }
+      },
+      "event_f1_drop_absolute": 0.06294040018002761,
+      "event_f1_drop_relative": 0.24371348397577905
+    },
+    {
+      "condition": "laptop",
+      "clips": 221,
+      "event_f1": 0.2302839116719243,
+      "macro_event_f1": 0.1712363252207672,
+      "segment_f1": 0.5195478969798036,
+      "inference_seconds": 0.6657427120371722,
+      "model_rtf": 0.0003049005774109237,
+      "evaluation_seconds_including_repeat": 4.507311999972444,
+      "evaluation_rtf_including_repeat": 0.0010321420020937828,
+      "prediction_sha256": "2d7cf2adae36185a353db024ad3f610ca7b3dc27a01b79462b6e7b4201916b0c",
+      "repeat_prediction_sha256": "2d7cf2adae36185a353db024ad3f610ca7b3dc27a01b79462b6e7b4201916b0c",
+      "reproducible": true,
+      "per_class": {
+        "alarm_bell_ringing": {
+          "precision": 0.26126126126126126,
+          "recall": 0.4142857142857143,
+          "f1": 0.3204419889502762,
+          "tp": 29,
+          "fp": 82,
+          "fn": 41
+        },
+        "blender": {
+          "precision": 0.05365853658536585,
+          "recall": 0.6470588235294118,
+          "f1": 0.09909909909909909,
+          "tp": 11,
+          "fp": 194,
+          "fn": 6
+        },
+        "cat": {
+          "precision": 0.22058823529411764,
+          "recall": 0.22727272727272727,
+          "f1": 0.22388059701492535,
+          "tp": 15,
+          "fp": 53,
+          "fn": 51
+        },
+        "dishes": {
+          "precision": 0.19186046511627908,
+          "recall": 0.28448275862068967,
+          "f1": 0.22916666666666669,
+          "tp": 33,
+          "fp": 139,
+          "fn": 83
+        },
+        "dog": {
+          "precision": 0.07865168539325842,
+          "recall": 0.30434782608695654,
+          "f1": 0.125,
+          "tp": 28,
+          "fp": 328,
+          "fn": 64
+        },
+        "electric_shaver_toothbrush": {
+          "precision": 0.05128205128205128,
+          "recall": 0.14285714285714285,
+          "f1": 0.07547169811320754,
+          "tp": 2,
+          "fp": 37,
+          "fn": 12
+        },
+        "frying": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 2,
+          "fn": 19
+        },
+        "running_water": {
+          "precision": 0.05339805825242718,
+          "recall": 0.275,
+          "f1": 0.08943089430894309,
+          "tp": 11,
+          "fp": 195,
+          "fn": 29
+        },
+        "speech": {
+          "precision": 0.3145833333333333,
+          "recall": 0.46319018404907975,
+          "f1": 0.3746898263027295,
+          "tp": 151,
+          "fp": 329,
+          "fn": 175
+        },
+        "vacuum_cleaner": {
+          "precision": 0.1,
+          "recall": 0.7058823529411765,
+          "f1": 0.17518248175182485,
+          "tp": 12,
+          "fp": 108,
+          "fn": 5
+        }
+      },
+      "event_f1_drop_absolute": 0.02797180382341863,
+      "event_f1_drop_relative": 0.10831049283756525
+    },
+    {
+      "condition": "pink_10db",
+      "clips": 221,
+      "event_f1": 0.21653189577717877,
+      "macro_event_f1": 0.1599980054820461,
+      "segment_f1": 0.5054530201342282,
+      "inference_seconds": 0.7331538352300413,
+      "model_rtf": 0.00033577390131488415,
+      "evaluation_seconds_including_repeat": 6.67010799999116,
+      "evaluation_rtf_including_repeat": 0.001527406717204117,
+      "prediction_sha256": "78d08f3f2e4d3c7b25bb7eb094997054b6bc82c75b6480e99417c91135a55fda",
+      "repeat_prediction_sha256": "78d08f3f2e4d3c7b25bb7eb094997054b6bc82c75b6480e99417c91135a55fda",
+      "reproducible": true,
+      "per_class": {
+        "alarm_bell_ringing": {
+          "precision": 0.25333333333333335,
+          "recall": 0.2714285714285714,
+          "f1": 0.26206896551724135,
+          "tp": 19,
+          "fp": 56,
+          "fn": 51
+        },
+        "blender": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 60,
+          "fn": 17
+        },
+        "cat": {
+          "precision": 0.2236842105263158,
+          "recall": 0.25757575757575757,
+          "f1": 0.23943661971830985,
+          "tp": 17,
+          "fp": 59,
+          "fn": 49
+        },
+        "dishes": {
+          "precision": 0.21153846153846154,
+          "recall": 0.28448275862068967,
+          "f1": 0.2426470588235294,
+          "tp": 33,
+          "fp": 123,
+          "fn": 83
+        },
+        "dog": {
+          "precision": 0.2,
+          "recall": 0.15217391304347827,
+          "f1": 0.17283950617283952,
+          "tp": 14,
+          "fp": 56,
+          "fn": 78
+        },
+        "electric_shaver_toothbrush": {
+          "precision": 0.05714285714285714,
+          "recall": 0.14285714285714285,
+          "f1": 0.08163265306122448,
+          "tp": 2,
+          "fp": 33,
+          "fn": 12
+        },
+        "frying": {
+          "precision": 0.0043859649122807015,
+          "recall": 0.05263157894736842,
+          "f1": 0.008097165991902832,
+          "tp": 1,
+          "fp": 227,
+          "fn": 18
+        },
+        "running_water": {
+          "precision": 0.037914691943127965,
+          "recall": 0.2,
+          "f1": 0.06374501992031872,
+          "tp": 8,
+          "fp": 203,
+          "fn": 32
+        },
+        "speech": {
+          "precision": 0.3053097345132743,
+          "recall": 0.4233128834355828,
+          "f1": 0.35475578406169667,
+          "tp": 138,
+          "fp": 314,
+          "fn": 188
+        },
+        "vacuum_cleaner": {
+          "precision": 0.10465116279069768,
+          "recall": 0.5294117647058824,
+          "f1": 0.1747572815533981,
+          "tp": 9,
+          "fp": 77,
+          "fn": 8
+        }
+      },
+      "event_f1_drop_absolute": 0.04172381971816416,
+      "event_f1_drop_relative": 0.16156010192508813
+    },
+    {
+      "condition": "combined",
+      "clips": 221,
+      "event_f1": 0.1871447310887626,
+      "macro_event_f1": 0.139892642856976,
+      "segment_f1": 0.4836628511966702,
+      "inference_seconds": 0.8438617530628107,
+      "model_rtf": 0.00038647653381968845,
+      "evaluation_seconds_including_repeat": 12.135133999981917,
+      "evaluation_rtf_including_repeat": 0.002778858331194789,
+      "prediction_sha256": "89e5474d231eabf64eb816326f1c8d0696b25c886980f2487099874d9d87efdd",
+      "repeat_prediction_sha256": "89e5474d231eabf64eb816326f1c8d0696b25c886980f2487099874d9d87efdd",
+      "reproducible": true,
+      "per_class": {
+        "alarm_bell_ringing": {
+          "precision": 0.078125,
+          "recall": 0.07142857142857142,
+          "f1": 0.07462686567164178,
+          "tp": 5,
+          "fp": 59,
+          "fn": 65
+        },
+        "blender": {
+          "precision": 0.037383177570093455,
+          "recall": 0.23529411764705882,
+          "f1": 0.06451612903225805,
+          "tp": 4,
+          "fp": 103,
+          "fn": 13
+        },
+        "cat": {
+          "precision": 0.19753086419753085,
+          "recall": 0.24242424242424243,
+          "f1": 0.21768707482993196,
+          "tp": 16,
+          "fp": 65,
+          "fn": 50
+        },
+        "dishes": {
+          "precision": 0.18248175182481752,
+          "recall": 0.21551724137931033,
+          "f1": 0.1976284584980237,
+          "tp": 25,
+          "fp": 112,
+          "fn": 91
+        },
+        "dog": {
+          "precision": 0.12903225806451613,
+          "recall": 0.13043478260869565,
+          "f1": 0.1297297297297297,
+          "tp": 12,
+          "fp": 81,
+          "fn": 80
+        },
+        "electric_shaver_toothbrush": {
+          "precision": 0.07407407407407407,
+          "recall": 0.14285714285714285,
+          "f1": 0.0975609756097561,
+          "tp": 2,
+          "fp": 25,
+          "fn": 12
+        },
+        "frying": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 210,
+          "fn": 19
+        },
+        "running_water": {
+          "precision": 0.02564102564102564,
+          "recall": 0.15,
+          "f1": 0.043795620437956206,
+          "tp": 6,
+          "fp": 228,
+          "fn": 34
+        },
+        "speech": {
+          "precision": 0.28051391862955033,
+          "recall": 0.401840490797546,
+          "f1": 0.33039092055485497,
+          "tp": 131,
+          "fp": 336,
+          "fn": 195
+        },
+        "vacuum_cleaner": {
+          "precision": 0.14444444444444443,
+          "recall": 0.7647058823529411,
+          "f1": 0.24299065420560748,
+          "tp": 13,
+          "fp": 77,
+          "fn": 4
+        }
+      },
+      "event_f1_drop_absolute": 0.07111098440658034,
+      "event_f1_drop_relative": 0.2753510576530209
+    }
+  ]
+}

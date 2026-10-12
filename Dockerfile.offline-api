@@ -1,0 +1,7 @@
+FROM adminer:6.0.1-standalone
+
+WORKDIR /srv
+COPY infra/offline-api/index.php /srv/index.php
+
+EXPOSE 8000
+ENTRYPOINT ["php", "-S", "0.0.0.0:8000", "-t", "/srv"]

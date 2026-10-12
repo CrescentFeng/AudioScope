@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audioscope"
+version = "1.0.0"
+description = "Reproducible environmental-sound classification and analysis starter"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "joblib>=1.3",
+  "numpy>=1.24",
+  "PyYAML>=6.0",
+  "scikit-learn>=1.3",
+  "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+cnn = ["torch>=2.2"]
+sed = ["torch>=2.2"]
+transfer = [
+  "safetensors>=0.4",
+  "transformers>=4.48,<6",
+]
+demo = ["gradio>=4.44,<6"]
+engineering = [
+  "onnx>=1.16",
+  "onnxruntime>=1.18",
+  "onnxscript>=0.1",
+  "psutil>=5.9",
+  "torch>=2.2",
+]
+microphone = ["sounddevice>=0.5"]
+release = ["Pillow>=10", "psutil>=5.9"]
+database = [
+  "alembic>=1.13",
+  "psycopg[binary]>=3.2",
+  "SQLAlchemy>=2.0",
+]
+api = [
+  "fastapi>=0.115",
+  "python-multipart>=0.0.18",
+  "uvicorn[standard]>=0.30",
+]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+audioscope = "audioscope.cli:main"
+audioscope-workbench = "audioscope.launch:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"] # Long bilingual UI strings and report text are intentionally kept readable.
+
+[tool.ruff.lint.per-file-ignores]
+"src/audioscope/release_video.py" = ["E501"] # Bilingual narration paragraphs.

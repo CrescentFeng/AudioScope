@@ -1,0 +1,6 @@
+# Reuse the installed runtime; no dependency upgrades or model downloads.
+ARG BASE_IMAGE=audioscope-python:local
+FROM ${BASE_IMAGE}
+WORKDIR /app
+COPY src/audioscope/workbench_health.py ./src/audioscope/
+RUN python -m pip install --no-index --no-deps --no-build-isolation .

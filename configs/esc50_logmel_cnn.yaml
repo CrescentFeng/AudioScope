@@ -1,0 +1,34 @@
+project:
+  seed: 2027
+data:
+  root: data/raw/ESC-50-master
+  manifest: data/manifests/esc50.jsonl
+  sample_rate: 32000
+  folds: [1, 2, 3, 4, 5]
+  feature_cache: data/processed/esc50-logmel-cache
+  allow_source_fold_overlap: true
+features:
+  n_mels: 64
+  n_fft: 1024
+  frame_ms: 25
+  hop_ms: 20
+  target_frames: 250
+model:
+  device: auto
+  channels: [16, 32, 64]
+  dropout: 0.3
+  batch_size: 64
+  epochs: 15
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  label_smoothing: 0.1
+  augmentation:
+    max_time_shift_frames: 20
+    frequency_mask: 8
+    time_mask: 25
+outputs:
+  artifact_dir: artifacts/esc50-logmel-cnn
+  report_dir: reports/generated/esc50-logmel-cnn
+robustness:
+  snr_db: [20, 10, 0]
+

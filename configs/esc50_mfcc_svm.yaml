@@ -1,0 +1,24 @@
+project:
+  seed: 2027
+data:
+  root: data/raw/ESC-50-master
+  manifest: data/manifests/esc50.jsonl
+  sample_rate: 32000
+  test_fold: 5
+  folds: [1, 2, 3, 4, 5]
+  feature_cache: data/processed/esc50-mfcc-cache
+  allow_source_fold_overlap: true
+features:
+  n_mfcc: 40
+  n_mels: 64
+  n_fft: 1024
+  frame_ms: 25
+  hop_ms: 10
+model:
+  c: 10.0
+  kernel: rbf
+outputs:
+  artifact_dir: artifacts/esc50-mfcc-svm
+  report_dir: reports/generated/esc50-mfcc-svm
+robustness:
+  snr_db: [20, 10, 0]
