@@ -6,7 +6,8 @@ version: 1.0.0
 date-released: 2026-10-12
 license: MIT
 authors:
-  - name: "CrescentFeng"
+  - family-names: "Feng"
+    given-names: "Crescent"
 repository-code: "https://github.com/CrescentFeng/AudioScope"
 abstract: >-
   A reproducible environmental-sound classification and sound-event-detection

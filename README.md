@@ -235,3 +235,12 @@ FastAPI 只读接口和 Docker Compose。音频与 checkpoint 不塞入 SQL，�
 
 AudioScope 源码采用 [MIT License](LICENSE)。第三方数据集、音频、预训练模型及其派生成果仍受
 各自许可和来源条款约束；`data/sources.yaml` 中的许可记录优先于代码许可。
+
+## Rights and attribution / 权利与署名
+
+Original project author/maintainer: **Crescent Feng (CrescentFeng)**. The current MIT licence retains copyright while permitting reuse under its terms, including commercial reuse; it is not an all-rights-reserved/no-commercial-use policy. Third-party material retains its own licence.
+
+- [Copyright, attribution and contact](COPYRIGHT.md)
+- [Citation](CITATION.cff) and [third-party notices](THIRD_PARTY_NOTICES.md)
+- [Asset provenance](docs/ASSET_PROVENANCE.md)
+- [Contributing](CONTRIBUTING.md) and [security reporting](SECURITY.md)

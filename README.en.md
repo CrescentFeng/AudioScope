@@ -54,3 +54,12 @@ physical recording requirements; these are an optional future extension.
 AudioScope source code is released under the [MIT License](LICENSE). Third-party datasets, audio,
 pretrained models, and derived assets remain subject to their respective source terms and licenses;
 see `data/sources.yaml` before downloading or redistributing them.
+
+## Rights and attribution / 权利与署名
+
+Original project author/maintainer: **Crescent Feng (CrescentFeng)**. The current MIT licence retains copyright while permitting reuse under its terms, including commercial reuse; it is not an all-rights-reserved/no-commercial-use policy. Third-party material retains its own licence.
+
+- [Copyright, attribution and contact](COPYRIGHT.md)
+- [Citation](CITATION.cff) and [third-party notices](THIRD_PARTY_NOTICES.md)
+- [Asset provenance](docs/ASSET_PROVENANCE.md)
+- [Contributing](CONTRIBUTING.md) and [security reporting](SECURITY.md)

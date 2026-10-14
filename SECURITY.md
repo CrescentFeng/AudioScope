@@ -1,9 +1,27 @@
-# Security Policy
+# Security policy
 
-AudioScope v1.0.x 是本地研究与作品集软件，不应直接作为公网多用户服务部署。当前版本没有账号、
-租户隔离或面向互联网的安全加固。
+Security fixes are developed against the latest `main` revision. This is a
+portfolio project; no response-time guarantee or long-term support contract
+is offered.
 
-发现安全问题时，请不要在公开 issue 中附带密码、音频、数据库转储或可利用细节；请通过仓库
-维护者 GitHub 主页提供的私密联系方式报告。提交前请删除本机路径和个人数据。
+## Report privately
 
-只支持当前 `main` 分支。所有 `.env` 值都应使用本机随机秘密，并保持在 Git 之外。
+If enabled, use [GitHub private vulnerability reporting](https://github.com/CrescentFeng/AudioScope/security/advisories/new).
+If that page is unavailable, use a contact method actually published on the
+[maintainer profile](https://github.com/CrescentFeng), or open a minimal Issue
+asking for a private channel **without vulnerability details**. GitHub profiles
+do not have a built-in private-message function.
+
+Include the affected version/commit, platform, impact and minimal reproduction
+privately. Do not publish live credentials, personal data, confidential sessions
+or unredacted exploit details. Remove or rotate an exposed credential before
+sharing sanitized evidence. Copyright and licence questions belong under
+[COPYRIGHT.md](COPYRIGHT.md).
+
+## Local use
+
+Do not commit tokens, private keys, signing certificates, `.env` secrets,
+private recordings or personal data. Inspect dependencies and downloaded files
+before running them. Ignore rules do not remove material already in Git history.
+
+本项目供本机研究与作品展示使用。不要直接部署为公网多用户服务；数据库、对象存储、模型服务、上传音频和历史记录应保持受控访问。示例连接参数不能作为生产凭据。
